@@ -1,9 +1,10 @@
-// const loginForm = document.querySelector("#login-from");
-const loginForm = document.getElementById("login-from");
+const loginForm = document.querySelector("#login-from");
+const loginInput = document.querySelector("#login-from input");
+// const loginForm = document.getElementById("login-from");
 
 //document가 아니라 loginForm에서 바로 찾을 수 있음 
-const loginInput = loginForm.querySelector("input");
-const loginButton = loginForm.querySelector("button");
+// const loginInput = loginForm.querySelector("input");
+// const loginButton = loginForm.querySelector("button");
 
 
 function onLoginSubmit(event) {
