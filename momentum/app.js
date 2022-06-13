@@ -7,8 +7,20 @@ const loginButton = loginForm.querySelector("button");
 
 function onLoginBtnClick() {
     //log전에 .dir로 속성 봐서 value를 써야하는것을 알게됨. 
-    console.log(loginInput.value);
-    console.log("click!!!");
+    // console.log(loginInput.value);
+    // console.log("click!!!");
+    const username = loginInput.value;
+
+    //if-else 문을 사용한 유효성 검사 
+    // if( username === "") {
+    //     alert("Please write your name");
+    //     console.log("Please write your name");
+    // } else if( username.length > 15 ){
+    //     alert("Too long name!");
+    // }
+
+    //html에서 기존에 만들어진 조건을 사용하여 간략화. (required, max-length ...)
+    console.log(username);
 
 }
 

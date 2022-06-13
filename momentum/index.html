@@ -9,10 +9,19 @@
 </head>
 
 <body>
-    <div id="login-form">
-        <input type="text" placeholder="What is your name?" />
+
+    //html에서 사용자의 input의 유효성 검사를 위해서는 input이 Form 안에 있어야한다. 
+    <form id="login-form">
+        <input 
+        required
+        maxlength="15"
+        type="text" 
+        placeholder="What is your name?" 
+        />
+        
         <button>Log In</button>
-    </div>  
+
+    </form>  
     <script src="app.js"></script>
 </body>
 
