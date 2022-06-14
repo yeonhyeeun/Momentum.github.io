@@ -11,13 +11,14 @@ const link = document.querySelector("a");
 
 function onLoginSubmit(event) {
     event.preventDefault(); //브라우저의 기본 동작을 멈추게 함 ex.submit 
-    console.log(loginInput.value); //콘솔에 loginInput 변수가 가지는 value값을 보여라.  
+    // console.log(loginInput.value); //콘솔에 loginInput 변수가 가지는 value값을 보여라.  
+    const username = loginInput.value; 
+    loginForm.classList.add("hidden"); 
+    console.log(username);    
 }
+ 
+// function handleLinkClick(event) {}
 
-function handleLinkClick() {
+loginForm.addEventListener("sucbmit", onLoginSubmit); 
 
-}
-
-loginForm.addEventListener("submit", onLoginSubmit); 
-
-link.addEventListener("click",handleLinkClick); 
+// link.addEventListener("click",handleLinkClick); 
