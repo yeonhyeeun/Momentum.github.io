@@ -23,25 +23,29 @@ const colors = [
   //제출일 06.17.
   //제출자 id : 0622yeon 
 
-  //body.style.backgroundcolor를 사용하기 위해 body받아오기 
+  //body.style.backgroundcolor-body태그를 사용하기 위해 body받아오기 
   const body = document.querySelector("body"); 
 
   //버튼 설정
   const colorBtn = document.querySelector("button");
 
-
-  // changeColor();
-  colorBtn.addEventListener("click", changeColor);
-
-
+  //이벤트 발생하는 함수 만들기 
   function changeColor() {
     //랜덤으로 바뀌는 색 고르기  
-    const randomColor = colors[ Math.floor(Math.random() * colors.length)];
-    body.style.backgroundColor = randomColor;
+    const Color1 = colors[ Math.floor(Math.random() * colors.length)];
+    const Color2 = colors[Math.round(Math.random() * colors.length)]; 
+
+    //그라데이션 색 만들기 const gradientColor = `
+   
+    //배경에 적용하기 - 이렇게만 하면 배경이 여러개 그라데이션이 나온다. 왜지 ㅠㅠ 
+    //-> 맨 앞에 속성으로 방향 설정을 해야하는거였다!!!! to right 을 적어주었다. 
+
+    body.style.backgroundImage =  `linear-gradient(to right, ${Color1}, ${Color2})`;
+    
 
     //색 변경되는지 콘솔에서 확인용 
-    //console.log(randomColor);    
-
-  }
+    //console.log(gradientColor);    
+    }
   
-  
+  // changeColor();
+  colorBtn.addEventListener("click", changeColor);
