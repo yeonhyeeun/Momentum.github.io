@@ -18,7 +18,11 @@ const colors = [
     "#ffd32a",
     "#ff3f34"
   ];
-  
+
+  //11일차 js 과제 
+  //제출일 06.17.
+  //제출자 id : 0622yeon 
+
   //body.style.backgroundcolor를 사용하기 위해 body받아오기 
   const body = document.querySelector("body"); 
 
