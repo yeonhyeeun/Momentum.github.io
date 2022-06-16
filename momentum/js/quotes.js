@@ -39,7 +39,20 @@ const quotes = [
         quote : "지존자의 은밀한 곳에 거하는 자는 전능하신 자의 그늘 아래 거하리로다",
         author : "시편 91:1", 
     },
+];
 
+const quote = document.querySelector("#quote span:first-child");
+const author = document.querySelector("#quote span:last-child");
 
+//Math.randon()을 사용하여 랜덤 float가짐, 
+//Math.round()사용하여 소수점 아래 내리기 
+//Math.ceil()사용하여 소수점 올리기 
+//Math.floor()사용하여 소수점 버림  
 
-]
+// 배열의 랜덤 번째 가져오기 - 하드코딩 
+// console.log(quotes[Math.floor(Math.random()*10)]); 
+
+const todaysQuote = quotes[Math.floor(Math.random() * quotes.length)]; 
+
+quote.innerText = todaysQuote.quote;
+author.innerText = todaysQuote.author;
