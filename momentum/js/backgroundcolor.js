@@ -47,5 +47,5 @@ const colors = [
     //console.log(gradientColor);    
     }
   
-  // changeColor();
+  changeColor();
   colorBtn.addEventListener("click", changeColor);
