@@ -1,5 +1,9 @@
 const clock = document.querySelector("h2#clock");
 
+const clockName = document.querySelector("h2#clockName")
+
+
+
 function getClock() {
     const date = new Date(); 
     //string으로 형변환해야 padstart 가능 
@@ -7,6 +11,7 @@ function getClock() {
     const minutes = String(date.getMinutes()).padStart(2,"0"); 
     const seconds = String(date.getSeconds()).padStart(2,"0");  
 
+    clockName.innerText = "현재 시각 "   ; 
     clock.innerText = (`${hours}:${minutes}:${seconds}`);
 } 
 //setInterval 함수 1인자:실행하고싶은 함수, 2인자:몇초간격? 5000=5초 
