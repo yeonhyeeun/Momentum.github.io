@@ -6,7 +6,27 @@
     <meta name="viewport" content="width=device-width", initial-scale="1.0">
     <link rel="stylesheet" href="CSS/style.css">
     <link rel=""
-    <title>Momentum</title>
+    <title> My Momentum </title> 
+    <style>
+        /* 배사 화면에 꽉 채우기  */
+        body, html {
+            margin : 0; 
+            padding : 0; 
+            height : 100%; 
+        }
+        .bgimg {
+            border : 0; 
+            padding : 0; 
+            min-height: 100%;
+            background-position: center;
+            background-size: cover;
+        }
+
+        /*정렬 스타일  */
+        .align-center { text-align: center;}
+        .align-right {text-align: right;}
+
+    </style>
 
 </head>
 
@@ -24,22 +44,13 @@
     </form>  
     <!-- 노마드 코더 강의로 가는 링크 코드 예제 -->
     <!-- <a href="https://nomadcoders.co">Go to courses</a> -->
-    <h2 id="clockName"></h2>
-    <h2 id="clock"> 00:00:00</h2>
+    <h2 id="clockName" class="align-right" > </h2>
+    <h2 id="clock" class="align-right"> 00:00:00</h2>
     <h1 id="greeting" class="hidden"> </h1>
-    <form id="todo-form">
+    <form id="todo-form" class="align-center">
         <input type="text" placeholder="Write a To Do and Press Enter." required />
     </form>
     <ul id="todo-list">    </ul> 
-
-
-    <div id="quote">
-        <!-- 1번째 스판 - 명언-->
-        <span></span> 
-        <br>
-        <!-- 2번째 스판 - 명언 작가 -->
-        <span></span>
-    </div>
 
     <div id="weather">
         <!-- 1번째 스판 - 명언-->
@@ -48,15 +59,26 @@
         <span></span>
     </div>
 
+    <!-- 이미지 위치 가운데, 명언 하단  -->
+    <script src="js/background.js"></script> 
 
-    <h3 id="xmasclock"></h3>
+    <div id="quote" class="align-center">
+        <!-- 1번째 스판 - 명언-->
+        <span></span> 
+        <br>
+        <!-- 2번째 스판 - 명언 작가 -->
+        <span></span>
+    </div>
+
+
+    <!-- <h3 id="xmasclock"></h3> -->
     <script src="js/greetings.js"></script>
     <script src="js/clock.js"></script>
 
     <!--  과제 확인용으로 임시 만든거  -->
     <!-- <script src="js/xmasclock.js"></script> -->
     <script src="js/quotes.js"></script>
-    <script src="js/background.js"></script>
+    
     <script src="js/Onebackgroundcolor.js"></script>
     <script src="js/todo.js"></script>
     <script src="js/weather.js"></script>

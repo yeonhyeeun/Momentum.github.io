@@ -12,7 +12,7 @@ function getClock() {
     const seconds = String(date.getSeconds()).padStart(2,"0");  
 
     clockName.innerText = "현재 시각 "   ; 
-    clock.innerText = (`${hours}:${minutes}:${seconds}`);
+    clock.innerText = ("현재 시각", `${hours}:${minutes}:${seconds}`);
 } 
 //setInterval 함수 1인자:실행하고싶은 함수, 2인자:몇초간격? 5000=5초 
 // setInterval(sayHello, 5000); 

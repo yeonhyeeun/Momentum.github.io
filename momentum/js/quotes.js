@@ -1,23 +1,23 @@
 const quotes = [ 
 {
     quote : "The unleashed power of the atom has changed everything save our modes of thinking, and we thus drift toward unparalleled catastrophes.",
-    author : "Albert Einstein", 
+    author : "- Albert Einstein -", 
 }, 
 {
     quote : "A hungry man is not a free man.",
-    author : "Adlai Stevenson",
+    author : "- Adlai Stevenson -",
 }, 
 {
     quote : "Man is born to live, not to prepare for life. Life itself, the phenomenon of life, the gift of life, is so breathtakingly serious!", 
-    author : "Boris Pasternak", 
+    author : "- Boris Pasternak -", 
 }, 
 {
     quote : "Anything you're good at contributes to happiness.", 
-    author : "Bertrand Russell", 
+    author : "- Bertrand Russell -", 
 }, 
 {
     quote : "Happiness is a warm puppy.",    
-    author : "Charles M. Schulz"
+    author : "- Charles M. Schulz -"
 }
 
 

@@ -1,12 +1,13 @@
 const toDoForm = document.getElementById("todo-form");
-const toDoInput = toDoForm.querySelector("input"); 
-//위 코드와 동일   = document.quertSelector("#todo-form input")
+// const toDoInput = toDoForm.querySelector("input"); 
+//위 코드와 동일   
+const toDoInput = document.quertSelector("#todo-form input")
 const toDoList = document.getElementById("todo-list"); 
+
+const TODOS_KEY = "todos"; 
 
 //투두 항목들을 저장할 배열 선언 
 const toDos = []; 
-
-const TODOS_KEY = "todos"; 
 
 //todo항목을 로컬 스토리지에 저장하기 - 단 배열형태는 로컬 스토리지에 저장할 수 없음 
 function saveToDos() {
@@ -61,8 +62,8 @@ function handleToDoSubmit(event) {
     }; 
     
     //배열에 푸시 해주기 
-    toDos.push(newTodo); 
-    paintToDo(newTodo); //인자 전달 
+    toDos.push(newTodoObj); 
+    paintToDo(newTodoObj); //인자 전달 
     saveToDos(); //전달했으면 저장하기 - 저장 함수 수행 
 }
 
@@ -75,7 +76,7 @@ toDoForm.addEventListener("submit", handleToDoSubmit);
 
 const savedToDos = localStorage.getItem(TODOS_KEY); 
 
-console.log(savedToDos); 
+// console.log(savedToDos); 
 if (savedToDos !== null) {
     //배열 형식으로 형변환 된 투두 항목들을 parsedTodos에 할당
     const parsedToDos = JSON.parse(savedToDos); 
