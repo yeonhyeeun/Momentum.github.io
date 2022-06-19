@@ -1,7 +1,7 @@
 const toDoForm = document.getElementById("todo-form");
-// const toDoInput = toDoForm.querySelector("input"); 
+const toDoInput = toDoForm.querySelector("input"); 
 //위 코드와 동일   
-const toDoInput = document.quertSelector("#todo-form input")
+// const toDoInput = document.quertSelector("#todo-form input")
 const toDoList = document.getElementById("todo-list"); 
 
 const TODOS_KEY = "todos"; 
@@ -40,7 +40,7 @@ function paintToDo(newTodo) {
     span.innerText = newTodo.text; //스판에 항목의 텍스트를 넣어주기 
 
     const button = document.createElement("button"); 
-    button.innerText = "❌"; 
+    button.innerText = " ❌"; 
     button.addEventListener("click",deleteToDo); 
 
     //appent는 맨 마지막에 나와야해! 
@@ -51,7 +51,9 @@ function paintToDo(newTodo) {
 
 
 function handleToDoSubmit(event) {
+
     event.preventDefault(); 
+
     // console.log(toDoInput.value); 
     const newTodo = toDoInput.value; //비우기 전 미리 저장 
     toDoInput.value = ""; 
@@ -67,7 +69,6 @@ function handleToDoSubmit(event) {
     saveToDos(); //전달했으면 저장하기 - 저장 함수 수행 
 }
 
-toDoForm.addEventListener("submit", handleToDoSubmit); 
 
 //아래 코드에서 for each문을 통해 간결화함 
 // function sayHello(item) {
@@ -90,3 +91,4 @@ if (savedToDos !== null) {
     // parsedToDos.forEach((item) => console.log("this is the turn of", item));
     parsedToDos.forEach(paintToDo); 
 }
+toDoForm.addEventListener("submit", handleToDoSubmit); 
