@@ -24,6 +24,8 @@ function deleteToDo(event) {
     // console.dir(event.target.parentElement.innerText); //레전드 코드  
     const li = event.target.parentElement; //우리가 삭제하고 싶은 투두 항목 
     li.remove(); 
+    toDos = toDos.filter((toDo) => toDo.id !== parseInt(li.id)); 
+    saveToDos(); 
 }
 
 
@@ -32,12 +34,14 @@ function paintToDo(newTodo) {
     // console.log("i will paint", newTodo);  //인자 잘 받는지 확인 
     //Js에서 html 만들기 아래 코드 
     const li = document.createElement("li"); //createElement의 변수는 html 태그여야한다. 
+    li.id = newTodo.id; 
     const span = document.createElement("span"); 
-    span.innerText = newTodo; //스판에 항목의 텍스트를 넣어주기 
+    span.innerText = newTodo.text; //스판에 항목의 텍스트를 넣어주기 
 
     const button = document.createElement("button"); 
     button.innerText = "❌"; 
     button.addEventListener("click",deleteToDo); 
+
     //appent는 맨 마지막에 나와야해! 
     li.appendChild(span); //리스트 밖에서 만들어진 span을 li안으로 넣기 
     li.appendChild(button); 
@@ -50,6 +54,12 @@ function handleToDoSubmit(event) {
     // console.log(toDoInput.value); 
     const newTodo = toDoInput.value; //비우기 전 미리 저장 
     toDoInput.value = ""; 
+
+    const newTodoObj = {
+        text : newTodo, 
+        id : Date.now(), 
+    }; 
+    
     //배열에 푸시 해주기 
     toDos.push(newTodo); 
     paintToDo(newTodo); //인자 전달 
@@ -70,8 +80,12 @@ if (savedToDos !== null) {
     //배열 형식으로 형변환 된 투두 항목들을 parsedTodos에 할당
     const parsedToDos = JSON.parse(savedToDos); 
     //배열의 기본 메서드 forEach 사용 
-    console.log(parsedToDos); 
+    // console.log(parsedToDos); 
+
+    toDos = parsedToDos; 
+
     //배열에 있는 각각의 items들이 sayHello함수를 실행시킴
     //forEach()를 사용함으로써 (즉, 배열의 아이템 개수만큼 함수가 실행됨)
-    parsedToDos.forEach((item) => console.log("this is the turn of", item));
+    // parsedToDos.forEach((item) => console.log("this is the turn of", item));
+    parsedToDos.forEach(paintToDo); 
 }
