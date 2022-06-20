@@ -1,4 +1,4 @@
-# JS_study
+# JS_study remind  
 JS스터디 기록  
 date : 06 / 08 Recap 2~3.  
 [2].  
@@ -26,3 +26,15 @@ date 06 /16 Recap 6.1
 date : 06 / 19. 
 Reacp 3.7 super recap-login form, .hidden&event에 관하여  
 (크롬에)localStorage를 db개념으로 이용하면 굳이 내가 만든 함수에 매개변수를 통해 변수를 전해 줄 필요가 없을때도 있다.  
+필요한 랜덤의 범위가 0~4일 경우, Math.random() * N(필요한 개수)을 한다. 이때 N은 0부터 랜덤출력의 최대값까지의 개수(예제의 경우 : 5)가 된다.  
+
+
+date : 06 / 20.  
+Recap #7.0  
+form은 submit event를 가진다.  
+해당강의의 실습이 이전 실습과 공통된 내용 : submit event를 받고, 기본 동작을 받고 input에서 value를 얻어낸다. 오늘의 강의에서 유일한 차이점은 paintToDo()를 호출한다는 것  
+#7.2  
+event propert는 target을 가지는데, 어떤 button이 클릭되었는지를 보여준다.(우리가 필요한 것이 이것!)  
+property에서 parentNote는 누가 이 버튼의 부모인지를 알려준다.  
+#7.4  
+JS allows you to execute a function for each item on that array!!! (coool)  
