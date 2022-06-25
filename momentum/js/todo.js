@@ -6,7 +6,7 @@ const toDoList = document.getElementById("todo-list");
 
 const TODOS_KEY = "todos"; 
 
-//투두 항목들을 저장할 배열 선언 
+//투두 항목들을 저장할 배열 선언 - const가 아니라 let으로!!! todos배열은 계속 바뀌기 때문 
 let toDos = []; 
 
 //todo항목을 로컬 스토리지에 저장하기 - 단 배열형태는 로컬 스토리지에 저장할 수 없음 

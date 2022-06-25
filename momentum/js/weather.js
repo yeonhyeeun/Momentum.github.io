@@ -1,28 +1,24 @@
-const weather = document.querySelector("#weather span:first-child");
-const city = document.querySelector("#weather span:last-child");
-const API_KEY = "241051bf13976dd3ddf8b8d9f247255e";
-
-
-
+//나의 API key 
+const API_KEY = "38dfccd27e25b40a06146afd7414a21a"; 
 
 function onGeoOk(position) {
     const lat = position.coords.latitude; 
-    // const lng = position.coords.longitude; 
-    // console.log("You live in", lat, log); 
-
-    const lng = position.coords.longitude; 
-    const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`;
+    const long = position.coords.longitude; 
+    const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${API_KEY}&units=metric`; 
     
-    fetch(url)
-        .then((response) => response.json())
-        .then((data) => {
-            city.innerText = data.name;
-            weather.innerText = `${data.weather[0].main} / ${data.main.temp}`;
-    });
-}
+    //실제로 url에 들어갈 필요없이 JS가 대신 url을 불러오도록 함 ->fetch : 시간이 조금 걸린 후 작동 
+    // fetch(url);
+    fetch(url).then(response => response.json()).then(data => {
+        // console.log(data.name, data.weather[0].main)
+        const name = data.name; 
+        const weather = data.weather[0].main; 
+    } 
+        ); 
+    //console.log(url); 
 
+    console.log("You live in ",lat,long); 
+}
 function onGeoError() {
-    alert("위치와 날씨를 찾을 수 없습니다. "); 
+    alert("Can't find you. no weather for you. "); 
 }
-
-navigator.geolocation.getCurrentPosition(onGeoOk,onGeoError); 
+navigator.geolocation.getCurrentPosition(onGeoOk, onGeoError); 
