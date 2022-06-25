@@ -1,3 +1,7 @@
+## JS를 사용한 Momentum clone! 
+
+
+
 # JS_study remind  
 JS스터디 기록  
 date : 06 / 08 Recap 2~3.  
