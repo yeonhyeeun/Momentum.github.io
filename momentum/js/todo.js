@@ -7,7 +7,7 @@ const toDoList = document.getElementById("todo-list");
 const TODOS_KEY = "todos"; 
 
 //투두 항목들을 저장할 배열 선언 
-const toDos = []; 
+let toDos = []; 
 
 //todo항목을 로컬 스토리지에 저장하기 - 단 배열형태는 로컬 스토리지에 저장할 수 없음 
 function saveToDos() {
@@ -99,6 +99,8 @@ toDoForm.addEventListener("submit", handleToDoSubmit);
 // function sexyFilter(item) {
 //     return item !== 3; 
 //     //새로 만들 배열에서 3만 빼고 넣고 싶을때 
+       //함수가 하는 일은 질문을 던지는 것이다 혹은 항목을 제외할지.
+    // 함수 내부가 true가 되는 것들만 새 배열에 들어감  
 // }
 // [1,2,3,4].filter(sexyFilter) => 위 코드의 결과 [1,2,4] 
 //should return true -> 새 배열에서 해당 항목을 유지하고 싶다면 
