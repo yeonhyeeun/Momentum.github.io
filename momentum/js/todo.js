@@ -35,7 +35,7 @@ function paintToDo(newTodo) {
     // console.log("i will paint", newTodo);  //인자 잘 받는지 확인 
     //Js에서 html 만들기 아래 코드 
     const li = document.createElement("li"); //createElement의 변수는 html 태그여야한다. 
-    li.id = newTodo.id; 
+    li.id = newTodo.id; //id 넣어주기 
     const span = document.createElement("span"); 
     span.innerText = newTodo.text; //스판에 항목의 텍스트를 넣어주기 뉴투두의 텍스트 부분을 가져올 것이기 때문 
 
@@ -91,5 +91,14 @@ if (savedToDos !== null) {
     //forEach()를 사용함으로써 (즉, 배열의 아이템 개수만큼 함수가 실행됨)
     // parsedToDos.forEach((item) => console.log("this is the turn of", item));
     parsedToDos.forEach(paintToDo); 
+    //forEach함수는 이 paintToDO를 parsedTodos 배열의 요소마다 실행한다. 
 }
 toDoForm.addEventListener("submit", handleToDoSubmit); 
+
+
+// function sexyFilter(item) {
+//     return item !== 3; 
+//     //새로 만들 배열에서 3만 빼고 넣고 싶을때 
+// }
+// [1,2,3,4].filter(sexyFilter) => 위 코드의 결과 [1,2,4] 
+//should return true -> 새 배열에서 해당 항목을 유지하고 싶다면 
