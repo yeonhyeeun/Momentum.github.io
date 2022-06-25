@@ -37,10 +37,10 @@ function paintToDo(newTodo) {
     const li = document.createElement("li"); //createElement의 변수는 html 태그여야한다. 
     li.id = newTodo.id; 
     const span = document.createElement("span"); 
-    span.innerText = newTodo.text; //스판에 항목의 텍스트를 넣어주기 
+    span.innerText = newTodo.text; //스판에 항목의 텍스트를 넣어주기 뉴투두의 텍스트 부분을 가져올 것이기 때문 
 
     const button = document.createElement("button"); 
-    button.innerText = " ❌"; 
+    button.innerText = "❌"; 
     button.addEventListener("click",deleteToDo); 
 
     //appent는 맨 마지막에 나와야해! 
@@ -55,17 +55,18 @@ function handleToDoSubmit(event) {
     event.preventDefault(); 
 
     // console.log(toDoInput.value); 
-    const newTodo = toDoInput.value; //비우기 전 미리 저장 
+    const newTodo = toDoInput.value; //비우기 전 미리 저장(복사) 
     toDoInput.value = ""; 
 
     const newTodoObj = {
         text : newTodo, 
+        // 랜덤 아이디 만들어주기 - 각각의 항목들을 구별하기 위해 
         id : Date.now(), 
     }; 
     
     //배열에 푸시 해주기 
     toDos.push(newTodoObj); 
-    paintToDo(newTodoObj); //인자 전달 
+    paintToDo(newTodoObj); //인자 전달 - 기존 text전달에서 객체 전달로 수정 
     saveToDos(); //전달했으면 저장하기 - 저장 함수 수행 
 }
 
