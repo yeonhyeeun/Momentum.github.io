@@ -30,7 +30,7 @@ function deleteToDo(event) {
 }
 
 
-
+//투두 만들기 힘수 
 function paintToDo(newTodo) {
     // console.log("i will paint", newTodo);  //인자 잘 받는지 확인 
     //Js에서 html 만들기 아래 코드 
