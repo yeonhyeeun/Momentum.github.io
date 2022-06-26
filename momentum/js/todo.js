@@ -16,7 +16,7 @@ function saveToDos() {
     //이때 사용하는 것이 JSON.stringify() 메소드 
     localStorage.setItem(TODOS_KEY, JSON.stringify(toDos)); 
 
-}
+    }
 
 
 //todo항목 삭제하기 
@@ -49,7 +49,7 @@ function paintToDo(newTodo) {
     toDoList.appendChild(li); //미리 만들어둔 html리스트 자리에 Js로 만든 리스트를 넣어주기 super coooool
 }
 
-
+//submit함수  
 function handleToDoSubmit(event) {
 
     event.preventDefault(); 
@@ -92,10 +92,11 @@ if (savedToDos !== null) {
     // parsedToDos.forEach((item) => console.log("this is the turn of", item));
     parsedToDos.forEach(paintToDo); 
     //forEach함수는 이 paintToDO를 parsedTodos 배열의 요소마다 실행한다. 
-}
+    }
+
 toDoForm.addEventListener("submit", handleToDoSubmit); 
 
-
+// Filter에 대한 간단한 설명 주석 처리 
 // function sexyFilter(item) {
 //     return item !== 3; 
 //     //새로 만들 배열에서 3만 빼고 넣고 싶을때 
